@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZR_RAP_LOTTERY'
+@MappingRole: true
+define role ZR_RAP_LOTTERY {
+  grant select on ZR_RAP_LOTTERY
+  where TRUE;
+}

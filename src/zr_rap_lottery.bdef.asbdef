@@ -1,0 +1,77 @@
+managed implementation in class ZBP_R_RAP_LOTTERY unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_RAP_LOTTERY alias RAP_LOTTERY
+persistent table ZRAP_LOTTERY
+extensible
+draft table ZRAP_LOTTERY_D
+etag master LocalLastChanged
+lock master total etag LastChanged
+authorization master( global )
+{
+  field ( numbering : managed, readonly )
+   ID;
+
+  field ( readonly )
+   Createdby,
+   Changedby,
+   LocalLastChanged,
+   LastChanged;
+
+
+
+  create;
+  update;
+  delete;
+
+  association _LotteryItem { create; with draft; }
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZRAP_LOTTERY corresponding extensible
+  {
+    ID = ID;
+    LotteryDate = lottery_date;
+    Text = TEXT;
+    Status = STATUS;
+    Createdby = CREATEDBY;
+    Changedby = CHANGEDBY;
+    LocalLastChanged = LOCAL_LAST_CHANGED;
+    LastChanged = LAST_CHANGED;
+  }
+
+}
+
+define behavior for ZR_RAP_LOTTERY_ITM alias LotteryItem
+persistent table zrap_lottery_itm
+draft table zrap_lttry_itm_d
+lock dependent by _LotteryHeader
+authorization dependent by _LotteryHeader
+etag master LocalLastChanged
+{
+  update;
+  delete;
+
+  field ( readonly ) ID;
+  field ( mandatory ) ItemNo;
+
+  association _LotteryHeader { with draft; }
+
+  mapping for zrap_lottery_itm
+  {
+    ID               = id;
+    ItemNo           = item_no;
+    CustomerID       = customer_id;
+    LotteryNumber    = lottery_number;
+    IsWinner         = is_winner;
+    Createdby        = createdby;
+    Changedby        = changedby;
+    LocalLastChanged = local_last_changed;
+    LastChanged      = last_changed;
+  }
+}

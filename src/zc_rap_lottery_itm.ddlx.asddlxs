@@ -1,0 +1,52 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+  typeName: 'Ticket',
+  typeNamePlural: 'Ticketss',
+  title: { type: #STANDARD, value: 'ItemNo' },
+  description: { type: #STANDARD, value: 'LotteryNumber' }
+}
+annotate view ZC_RAP_LOTTERY_ITM with
+{
+  @UI.facet: [ {
+    label: 'Tickets information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  
+  @UI.hidden: true
+  ID;
+  
+  @EndUserText.label: 'Position'
+  @UI.identification: [ { position: 20 } ]
+  @UI.lineItem: [ { position: 20 } ]
+  ItemNo;
+  
+  @EndUserText.label: 'Customer ID'
+  @UI.identification: [ { position: 30 } ]
+  @UI.lineItem: [ { position: 30 } ]
+  CustomerID;
+  
+  @EndUserText.label: 'Ticket number'
+  @UI.identification: [ { position: 40 } ]
+  @UI.lineItem: [ { position: 40 } ]
+  LotteryNumber;
+  
+  @EndUserText.label: 'Is winner?'
+  @UI.identification: [ { position: 50 } ]
+  @UI.lineItem: [ { position: 50 } ]
+  IsWinner;
+  
+  @UI.hidden: true
+  Createdby;
+  
+  @UI.hidden: true
+  Changedby;
+  
+  @UI.hidden: true
+  LocalLastChanged;
+  
+  @UI.hidden: true
+  LastChanged;
+}

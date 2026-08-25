@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZC_RAP_LOTTERY_ITM'
+@MappingRole: true
+define role ZC_RAP_LOTTERY_ITM {
+  grant select on ZC_RAP_LOTTERY_ITM
+  where INHERITING CONDITIONS FROM ENTITY ZR_RAP_LOTTERY_ITM REPLACING { ROOT WITH _BaseEntity };
+}
