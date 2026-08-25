@@ -1,7 +1,6 @@
 # rap_lottery
-SAP ABAP RAP example.
-A company want to create an marketing campaign to ther clients.
-The campaign consist of a "Lottery" for offer a special discount of 10% for the winner.
-In order to have a full control of the marketing the company ask to their Abap developers to create a Fiori app.
-The Fiori app should follow the Clean Core principles according to the company objetives. 
-Then the developer decided to use the RAP model
+SAP ABAP RAP Example: Lottery App
+
+A company wants to launch a marketing campaign for its customers, offering a "Lottery" where winners receive special product discounts.
+To maintain complete operational control over the campaign, the company required its development team to build a custom SAP Fiori application. To align with corporate IT objectives, the solution adheres strictly to Clean Core principles.
+To meet these requirements, the developer implemented the project using the SAP RESTful Application Programming Model (RAP) on ABAP Cloud.
