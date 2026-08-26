@@ -12,7 +12,8 @@ define view entity ZC_RAP_LOTTERY_ITM
   association [1..1] to ZR_RAP_LOTTERY_ITM as _BaseEntity on $projection.ID = _BaseEntity.ID and $projection.ItemNo = _BaseEntity.ItemNo
 {
   key ID,
-  key ItemNo,
+  ParentID,
+  ItemNo,
   CustomerID,
   LotteryNumber,
   IsWinner,

@@ -38,11 +38,11 @@ annotate view ZC_RAP_LOTTERY with
   @EndUserText.label: 'Lottery Date'
   @UI.identification: [ {
     position: 20 , 
-    label: 'LotteryDate'
+    label: 'Lottery Date'
   } ]
   @UI.lineItem: [ {
     position: 20 , 
-    label: 'LotteryDate'
+    label: 'Lottery Date'
   } ]
   @UI.selectionField: [ {
     position: 20 
@@ -62,6 +62,20 @@ annotate view ZC_RAP_LOTTERY with
     position: 30 
   } ]
   Status;
+  
+   @EndUserText.label: 'Discount (%)'
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Discount (%)'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'Discount (%)'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  Discount;
   
   @EndUserText.label: 'Description'
   @UI.identification: [ {

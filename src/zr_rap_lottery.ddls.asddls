@@ -3,7 +3,7 @@
 @ObjectModel.sapObjectNodeType.name: 'ZRAP_LOTTERY'
 @EndUserText.label: '###GENERATED Core Data Service Entity'
 define root view entity ZR_RAP_LOTTERY
-  as select from zrap_lottery as RAP_LOTTERY
+  as select from zrap_lottery
   composition [0..*] of ZR_RAP_LOTTERY_ITM as _LotteryItem
 {
   @Semantics.uuid: true
@@ -11,6 +11,7 @@ define root view entity ZR_RAP_LOTTERY
   lottery_date as LotteryDate,
   text as Text,
   status as Status,
+  discount as Discount,
   @Semantics.user.createdBy: true
   createdby as Createdby,
   @Semantics.user.lastChangedBy: true

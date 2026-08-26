@@ -5,10 +5,12 @@
 define view entity ZR_RAP_LOTTERY_ITM
   as select from zrap_lottery_itm
   association to parent ZR_RAP_LOTTERY as _LotteryHeader
-    on $projection.ID = _LotteryHeader.ID
+    on $projection.ParentID = _LotteryHeader.ID
 {
+  @Semantics.uuid: true
   key id as ID,
-  key item_no as ItemNo,
+  parent_id as ParentID,
+  item_no as ItemNo,
   customer_id as CustomerID,
   lottery_number as LotteryNumber,
   is_winner as IsWinner,

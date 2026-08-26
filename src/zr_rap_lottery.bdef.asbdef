@@ -2,7 +2,7 @@ managed implementation in class ZBP_R_RAP_LOTTERY unique;
 strict ( 2 );
 with draft;
 extensible;
-define behavior for ZR_RAP_LOTTERY alias RAP_LOTTERY
+define behavior for ZR_RAP_LOTTERY alias LotteryHeader
 persistent table ZRAP_LOTTERY
 extensible
 draft table ZRAP_LOTTERY_D
@@ -57,14 +57,15 @@ etag master LocalLastChanged
   update;
   delete;
 
-  field ( readonly ) ID;
-  field ( mandatory ) ItemNo;
+  field ( numbering : managed, readonly ) ID;
+  field ( readonly ) ParentID, ItemNo;
 
   association _LotteryHeader { with draft; }
 
   mapping for zrap_lottery_itm
   {
     ID               = id;
+    ParentID         = parent_id;
     ItemNo           = item_no;
     CustomerID       = customer_id;
     LotteryNumber    = lottery_number;
@@ -74,4 +75,5 @@ etag master LocalLastChanged
     LocalLastChanged = local_last_changed;
     LastChanged      = last_changed;
   }
+  determination getposition on modify { create; }
 }

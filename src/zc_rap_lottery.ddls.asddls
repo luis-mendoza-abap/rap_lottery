@@ -15,10 +15,11 @@ define root view entity ZC_RAP_LOTTERY
   key ID,
   LotteryDate,
   Text,
-  @Consumption.valueHelpDefinition: [{ 
-        entity: { name: 'ZI_RAP_LOTTERY_STATUS_VH', element: 'Status' } 
-      }]
+  @Consumption.valueHelpDefinition: [{
+    entity: { name: 'ZI_RAP_LOTTERY_STATUS_VH', element: 'Status' }
+}]
   Status,
+  Discount,
   @Semantics: {
     user.createdBy: true
   }
