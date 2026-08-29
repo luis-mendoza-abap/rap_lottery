@@ -1,4 +1,4 @@
-projection implementation in class ZBP_C_RAP_LOTTERY unique;
+projection;
 strict ( 2 );
 extensible;
 use draft;
