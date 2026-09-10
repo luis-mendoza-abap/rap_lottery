@@ -11,9 +11,26 @@ Main List
 
 <img width="577" height="316" alt="Main_List" src="https://github.com/user-attachments/assets/b97500ca-5dec-4d87-b29a-9445ca327d10" />
 
-Object page
+Object page Header
+
+<img width="3000" height="1860" alt="image" src="https://github.com/user-attachments/assets/c6e71db4-bae0-4655-8521-25b52b81e7b2" />
+
+<img width="3076" height="1876" alt="image" src="https://github.com/user-attachments/assets/4caf867c-5b97-4039-8d5b-a53b15f93843" />
 
 <img width="542" height="320" alt="Object_page_header" src="https://github.com/user-attachments/assets/4c9db1cd-fffe-47f0-b9e4-a01b17a08cd0" />
-<img width="465" height="275" alt="Object_page_item" src="https://github.com/user-attachments/assets/8a2b15e1-65aa-4e0c-80cd-e3d4de9d4fb2" />
-<img width="499" height="263" alt="Object_page_item_2" src="https://github.com/user-attachments/assets/f9955163-6d38-48fb-950b-99228b546ba0" />
+
+
+Object page Tickets
+
+<img width="3044" height="1836" alt="image" src="https://github.com/user-attachments/assets/82663e1f-efc7-47a6-9984-1b4ee4aac687" />
+
+<img width="2952" height="1844" alt="image" src="https://github.com/user-attachments/assets/d3fc1e82-9956-406d-9b59-dfd739976893" />
+
+<img width="3120" height="1836" alt="image" src="https://github.com/user-attachments/assets/4e6e8a22-e286-4392-a494-26e5826b5995" />
+
+<img width="3016" height="1844" alt="image" src="https://github.com/user-attachments/assets/f3b781aa-0276-4954-aecf-e7d8dfe878e1" />
+
+
+
+
 
