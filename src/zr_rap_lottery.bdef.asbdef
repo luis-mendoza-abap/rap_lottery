@@ -44,7 +44,7 @@ authorization master( global )
     LocalLastChanged = LOCAL_LAST_CHANGED;
     LastChanged = LAST_CHANGED;
   }
-
+  validation checkDiscount on save {create;update;}
 }
 
 define behavior for ZR_RAP_LOTTERY_ITM alias LotteryItem

@@ -56,10 +56,39 @@ CLASS LHC_ZR_RAP_LOTTERY DEFINITION INHERITING FROM CL_ABAP_BEHAVIOR_HANDLER.
       GET_GLOBAL_AUTHORIZATIONS FOR GLOBAL AUTHORIZATION
         IMPORTING
            REQUEST requested_authorizations FOR LotteryHeader
-        RESULT result.
+        RESULT result,
+      checkDiscount FOR VALIDATE ON SAVE
+          IMPORTING  keys FOR LotteryHeader~checkDiscount.
 ENDCLASS.
 
 CLASS LHC_ZR_RAP_LOTTERY IMPLEMENTATION.
   METHOD GET_GLOBAL_AUTHORIZATIONS.
   ENDMETHOD.
+  METHOD checkDiscount.
+    read ENTITIES OF ZR_RAP_LOTTERY in local mode
+    entity LotteryHeader
+    fields ( Discount )
+    with CORRESPONDING #( keys )
+    result data(lotteries).
+
+    loop at lotteries into data(lottery).
+         if lottery-Discount > 30.
+            data(message) = me->new_message( id = 'ZRAP202608'
+                                        number = '001'
+                                        severity = ms-error
+                                        v1 = '30' ).
+
+           DATA reported_record like line of reported-lotteryheader.
+           reported_record-%tky = lottery-%tky.
+           reported_record-%msg = message.
+           reported_record-%element-discount = if_abap_behv=>mk-on.
+           append reported_record to reported-lotteryheader.
+
+           DATA failed_record like line of failed-lotteryheader.
+           failed_record-%tky = lottery-%tky.
+           append failed_record to failed-lotteryheader.
+         endif.
+    endloop.
+  ENDMETHOD.
+
 ENDCLASS.

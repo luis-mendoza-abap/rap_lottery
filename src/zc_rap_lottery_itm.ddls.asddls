@@ -14,6 +14,11 @@ define view entity ZC_RAP_LOTTERY_ITM
   key ID,
   ParentID,
   ItemNo,
+  @Consumption.valueHelpDefinition: [{ 
+    entity: { 
+      name: 'ZCE_BUSINESS_PARTNER_VH', 
+      element: 'businesspartner' }   
+  }]
   CustomerID,
   LotteryNumber,
   IsWinner,
